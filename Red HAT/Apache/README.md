@@ -127,7 +127,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 # Website Binde with Domain Name.
 
--   Create a Local Domain.
+-   Create a Local [Domain.](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Red%20HAT/DNS/DNS%20Server%20Configure.md)
 
 -   Edit File.
     ```
