@@ -1,3 +1,4 @@
+[DNS Theory.](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Red%20HAT/DNS/DNS%20Theory.md)
 # Cache Only DNS.
 
 ***Configure Cache Server.***
