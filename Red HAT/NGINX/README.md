@@ -112,7 +112,7 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
 
 # Website Binde with Domain Name.
 
--   Create a Local Domain.
+-   Create a Local [Domain.](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Red%20HAT/DNS/DNS%20Server%20Configure.md)
 
 -   Edit Configure file.
     ```
