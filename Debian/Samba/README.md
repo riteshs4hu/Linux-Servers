@@ -1,4 +1,4 @@
-[SAMBA Client](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Debian/Samba/samba%20client.md)
+[SAMBA Client.](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Debian/Samba/samba%20client.md)
 # SMB Server
 SMB (Server Message Block) is a network protocol used by Windows-based computers that allows the computer to share files, printers, and other resources with other computers on the network.
 
