@@ -19,9 +19,9 @@
     ```
 	smbclient //IP/data access_folder_name -U enter_user_name
 	```
-		-U				Set the network username
-		-L				Get a list of shares available on a host
-		-N				NULL 
+		-U		Set the network username
+		-L		Get a list of shares available on a host
+		-N		NULL 
     
     **2. smbget**
 
@@ -34,16 +34,16 @@
 
     The smbtar command is a utility for creating tar archives of files and directories on an SMB server. You can use it to download a directory from a server by specifying the server, share name, username, password, and the name of the tar archive file you want to create.
 	
-		-s									Server
-		-x									Folder Share Name
-		-u								    Username
-		-p								    Password
-		-t									New Tar File name 
-		-v								    Verbose mode
+		-s		Server
+		-x		Folder Share Name
+		-u		Username
+		-p		Password
+		-t		New Tar File name 
+		-v		Verbose mode
 	
 	**4. Temporary Mount**
 	```	
 	mount -t cifs -o username=user,password=user_password //IP/Data_Access_folder /mount_folder_name
 	```
-		-t 						Type
-		-o						Options
+		-t 		Type
+		-o		Options
