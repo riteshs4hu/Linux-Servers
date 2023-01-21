@@ -206,10 +206,10 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   **PHP Configure.**
 
     ```
-    # apt install php php-common php-mcrypt php-cli php-opcache php-gd php-curl php-mysqlnd php-xml
+    # apt install php7.4 php7.4-common php7.4-mbstring php7.4-xmlrpc php7.4-soap php7.4-gd php7.4-xml php7.4-intl php7.4-mysql php7.4-cli php7.4-ldap php7.4-zip php7.4-curl 
     ```
     ```
-    # vim /etc/php/7.4/apache2/php.ini
+    # vim /etc/php/7.4/cli/php.ini
     ```
     ```
     memory_limit = 512M
@@ -257,16 +257,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     ```
     # systemctl enable mysqld
     ```
-   Get MySQL temporary password using the following command.
- 
-    ```
-    # grep 'temporary password' /var/log/mysqld.log
-    ```
-    Change MySQL Password using the following command.
-    ```
-    # mysql_secure_installation
-    ```
-
+    
 -   **Configure phpMyAdmin.**
 
     ```
@@ -288,7 +279,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     ```
 	<Virtualhost Enter_phpMyAdmin_Bind_IP>
    		Documentroot /var/www/html/phpMyAdmin/
-    	Directoryindex index.php
+    	 Directoryindex index.php
 	</virtualhost>
     ```
 
@@ -324,7 +315,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     <Virtualhost Enter_phpMyAdmin_Bind_IP>
    		Documentroot /var/www/html/wordpress/
     	Directoryindex index.php
-	</virtualhost>
+     </virtualhost>
     ```
 
     **Change folder Ownership.**
