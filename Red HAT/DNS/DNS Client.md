@@ -12,13 +12,7 @@ Find Available Package.
 
 # <font size=5>Commands</font>
 
- 1. dig
- 2. host
- 3. nslookup
-
-**<font size=4>Use Commands.</font>**
-
-- dig
+### dig
 
 ```
 # dig IP/domain name
@@ -71,7 +65,7 @@ Find Available Package.
 # dig example.com any
 ```
 
-- host
+### host
 
 ```
 # host  IP/Domain_Name
@@ -100,7 +94,7 @@ Find Available Package.
 # host -4 8.8.8.8
 ```
 
-- nslookup
+### nslookup
 
 ```
 # nslookup example.com
