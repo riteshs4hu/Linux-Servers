@@ -22,7 +22,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   Install Apache web server in Debiane Linux.
 
     ``` 
-    # apt install apache2*
+    apt install apache2*
     ```
 -   Usefull Files .
     
@@ -37,30 +37,30 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   Owaner and Group change.
 
     ```
-    # chown www-data:www-data /var/www/html/*
+    chown www-data:www-data /var/www/html/*
     ```
 -   Port Allow in iptables.
     ```
-    # iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 80 -j ACCEPT
     ```
     ```
-    # iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 443 -j ACCEPT
     ```
     ```
-    # iptables-save 
+    iptables-save 
     ```
 
 -   Start iptables service.
     ```
-    # systemctl start iptables
+    systemctl start iptables
     ```
     *usage :- This Command Start iptables service*
     ```
-    # systemctl restart iptables
+    systemctl restart iptables
     ```
     *usage :- This Command restart iptables service.*
     ```	
-    # systemctl enable iptables
+    systemctl enable iptables
     ```
     *usage :- This Command enable Booton iptables service.*
 
@@ -68,7 +68,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Edit File.
     ```
-    # vim /etc/apache2/apache2.conf
+    vim /etc/apache2/apache2.conf
     ```	
     Note:- Add these lines at the end of the file.
         
@@ -82,14 +82,14 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```
-    # systemctl restart ap.service.
+    systemctl restart apache2.service.
     ```
 
 # Website Binde with Port.
 
 -   Edit File.
     ```
-    # vim /etc/apache2/apache2.conf
+    vim /etc/apache2/apache2.conf
     ```
     Note:- Add these lines at the end of the file.
         
@@ -103,7 +103,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```
-    # systemctl restart apache2.service
+    systemctl restart apache2.service
     ```
 
 # Website Binde with Domain Name.
@@ -112,7 +112,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Edit File.
     ```
-    # vim /etc/apache2/apache2.conf
+    vim /etc/apache2/apache2.conf
     ```	
     Note:- Add these lines at the end of the file.
 
@@ -130,7 +130,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```
-    # systemctl restart apache2.service
+    systemctl restart apache2.service
     ```
 
 # Website Binde with SSL.
@@ -138,11 +138,11 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   Enable ssl module
 
     ```
-    # a2enmod ssl
+    a2enmod ssl
     ```
 -   Edit File.
     ```
-    # vim /etc/apache2/apache2.conf
+    vim /etc/apache2/apache2.conf
     ```
     Note:- Add these lines at the end of the file.
             
@@ -162,18 +162,18 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```		
-    # systemctl restart apache2.service
+    systemctl restart apache2.service
     ```
 # Website Call with Users home-directory.
 
 -   **Enable the userdir module**
 
     ```
-    # a2enmod userdir
+    a2enmod userdir
     ```
 -   **Binde website**
     ```
-    # vim /etc/apache2/apache2.conf
+    vim /etc/apache2/apache2.conf
     ```
     ```
     <Virtualhost  Enter_Binde_IP>
@@ -185,7 +185,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   **Grant execute permission to user.**
 
     ```
-    # chmod 711 /home/user_name
+    chmod 711 /home/user_name
     ```
 
 -   **Go To User**
@@ -198,7 +198,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     Put your website in public_html folder.
 -   Start service.
     ```		
-    # systemctl restart apache2.service
+    systemctl restart apache2.service
     ```
 
 # Wordpress Deploy in Apache.
@@ -206,10 +206,10 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   **PHP Configure.**
 
     ```
-    # apt install php7.4 php7.4-common php7.4-mbstring php7.4-xmlrpc php7.4-soap php7.4-gd php7.4-xml php7.4-intl php7.4-mysql php7.4-cli php7.4-ldap php7.4-zip php7.4-curl 
+    apt install php7.4 php7.4-common php7.4-mbstring php7.4-xmlrpc php7.4-soap php7.4-gd php7.4-xml php7.4-intl php7.4-mysql php7.4-cli php7.4-ldap php7.4-zip php7.4-curl 
     ```
     ```
-    # vim /etc/php/7.4/cli/php.ini
+    vim /etc/php/7.4/cli/php.ini
     ```
     ```
     memory_limit = 512M
@@ -236,45 +236,45 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
     Install MySQL Repo.
     ```
-    # wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+    wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
     ```
     ```
-    # apt install ./mysql-apt-config_0.8.24-1_all.deb
+    apt install ./mysql-apt-config_0.8.24-1_all.deb
     ```
 
     Install MySQL-community-server
     ```
-    # apt update
+    apt update
     ```
     ```
-    # apt install mysql-community-server
+    apt install mysql-community-server
     ```
     After the installation is complete, start the MySQL server using the following command.
 
     ```
-    # systemctl start mysqld
+    systemctl start mysqld
     ```
     ```
-    # systemctl enable mysqld
+    systemctl enable mysqld
     ```
     
 -   **Configure phpMyAdmin.**
 
     ```
-    # wget https://files.phpmyadmin.net/phpMyAdmin/5.2.0/phpMyAdmin-5.2.0-all-languages.zip
+    wget https://files.phpmyadmin.net/phpMyAdmin/5.2.0/phpMyAdmin-5.2.0-all-languages.zip
     ```
     ***usage*** :- Install phpMyAdmin Package.
     ```
-	# unzip phpMyAdmin-5.2.0-all-languages.zip
-	```
+    unzip phpMyAdmin-5.2.0-all-languages.zip
+    ```
     ***usage*** :- Unzip phpMyAdmin Package.
     ```	
-	# cp -rv phpMyAdmin-5.2.0-all-languages /var/www/html/phpMyAdmin
-	```
+    cp -rv phpMyAdmin-5.2.0-all-languages /var/www/html/phpMyAdmin
+    ```
 
     **Bind phpMyAdmin any type in your web server.**	
     ```
-	# vim /etc/apache2/apache2.conf 
+     vim /etc/apache2/apache2.conf 
     ```
     ```
 	<Virtualhost Enter_phpMyAdmin_Bind_IP>
@@ -285,31 +285,31 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
     **Change folder Ownership.**
     ```
-    # chown -Rv www-data:www-data phpMyAdmin/
+    chown -Rv www-data:www-data phpMyAdmin/
     ```
 
     **Restart Service**
     ```
-	# systemctl restart apache2.service
+	systemctl restart apache2.service
     ```
 
 -   **Configure Wordpress.**
 
     Install
     ```
-    # wget https://wordpress.org/latest.tar.gz
+    wget https://wordpress.org/latest.tar.gz
 	```
      ***usage*** :- Install wordpress Package.
     ```
-	# tar -xvf latest.tar.gz
+	tar -xvf latest.tar.gz
     ```
     ***usage*** :- Unzip wordpress Package.
     ```	
-	# cp -rv wordpress/ /var/www/html/
+	cp -rv wordpress/ /var/www/html/
 	```
     **Bind wordpress any type in your web server.**
     ```
-    # vim /etc/apache2/apache2.conf
+    vim /etc/apache2/apache2.conf
     ```
     ```
     <Virtualhost Enter_phpMyAdmin_Bind_IP>
@@ -320,12 +320,12 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
     **Change folder Ownership.**
     ```
-    # chown -Rv www-data:www-data /var/www/html/wordpress/
+    chown -Rv www-data:www-data /var/www/html/wordpress/
     ```
 
     **Disable selinux Permission**
     ```
-    # vim /etc/selinux/config
+    vim /etc/selinux/config
     ```
     ```
     Search 
@@ -339,5 +339,5 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
     **Restart Service**
     ```
-	# systemctl restart apache2.service
+	systemctl restart apache2.service
     ```
