@@ -322,21 +322,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     ```
     chown -Rv www-data:www-data /var/www/html/wordpress/
     ```
-
-    **Disable selinux Permission**
-    ```
-    vim /etc/selinux/config
-    ```
-    ```
-    Search 
-
-    SELINUX=permissive
-
-    Replace
-
-    SELINUX=disable
-    ```
-
+    
     **Restart Service**
     ```
 	systemctl restart apache2.service
