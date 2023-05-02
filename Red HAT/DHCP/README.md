@@ -29,29 +29,29 @@ Acknowledge: The DHCP server then acknowledges the request and assigns the IP ad
 -   **Install DHCP.**
 
     ```
-    # yum instal dhcp*
+    yum instal dhcp*
     ```
 
 -   **Start DHCP Service.**
     ```
-    # systemctl enable dhcpd.service
+    systemctl enable dhcpd.service
     ```
     ```
-    # systemctl start dhcpd.service
+    systemctl start dhcpd.service
     ```
 
 -   **Allow DHCP port on firewall.**
 
     ```
-    # iptables -A INPUT -p udp --dport 67 -j ACCEPT
+    iptables -A INPUT -p udp --dport 67 -j ACCEPT
     ```
     ```
-    # iptables-save
+    iptables-save
     ```
 -   **Configuration DHCP.**
 
     ```
-    # vim /etc/dhcp/dhcp.config
+    vim /etc/dhcp/dhcp.config
     ```
     Distribute IP address.
     ```
