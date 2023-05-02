@@ -21,7 +21,7 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
 -   Install NGINX web server in Red Hat Linux.
 
     ``` 
-    # yum install nginx*
+    yum install nginx*
     ```
 -   Usefull Files .
     
@@ -41,7 +41,7 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
 -   Port Allow in iptables.
 
     ```
-    # vim /etc/sysconfig/iptables
+    vim /etc/sysconfig/iptables
     ```
 	    
         -A INPUT -p tcp --dport 80 -j ACCEPT
@@ -52,15 +52,15 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
 	
 -   Start iptables service.
     ```
-    # systemctl start iptables
+    systemctl start iptables
     ```
     *usage :- This Command Start iptables service*
     ```
-    # systemctl restart iptables
+    systemctl restart iptables
     ```
     *usage :- This Command restart iptables service*
     ```	
-    # systemctl enable iptables
+    systemctl enable iptables
     ```
     *usage :- This Command enable Booton iptables service*
 
@@ -68,7 +68,7 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
 
 -   Edit Configure file.
     ```
-    # vim /etc/nginx/nginx.conf
+    vim /etc/nginx/nginx.conf
     ```	
     Note:- Go To server block.
     ```
@@ -84,14 +84,14 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
     ```
 -   Start service.
     ```
-    # systemctl restart nginx.service
+    systemctl restart nginx.service
     ```
 
 # Website Binde with Port.
 
 -   Edit Configure file.
     ```
-    # vim /etc/nginx/nginx.conf
+    vim /etc/nginx/nginx.conf
     ```	
     Note:- Go To server block.
     ```
@@ -107,7 +107,7 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
     ```
 -   Start service.
     ```
-    # systemctl restart nginx.service
+    systemctl restart nginx.service
     ```
 
 # Website Binde with Domain Name.
@@ -116,7 +116,7 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
 
 -   Edit Configure file.
     ```
-    # vim /etc/nginx/nginx.conf
+    vim /etc/nginx/nginx.conf
     ```	
     Note:- Go To server block.
     ```
@@ -133,17 +133,17 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
     ```
 -   Start service.
     ```
-    # systemctl restart nginx.service
+    systemctl restart nginx.service
     ```
 # Website Binde with SSL.
 
 -   Install SSL
     ```
-    # yum install mod_ssl
+    yum install mod_ssl
     ```	
 -   Edit Configure file.
     ```
-    # vim /etc/nginx/nginx.conf
+    vim /etc/nginx/nginx.conf
     ```	
     Note:- Go To server block.
     ```
@@ -164,5 +164,5 @@ NGINX is known for its event-based architecture, which allows it to handle a lar
     ```
 -   Start service.
     ```
-    # systemctl restart nginx.service
+    systemctl restart nginx.service
     ```
