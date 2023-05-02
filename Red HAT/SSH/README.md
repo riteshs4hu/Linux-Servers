@@ -5,49 +5,49 @@ SSH is often used to remotely access and manage servers, as it provides a secure
 
 -   **Install Client Tool.**
     ```
-    # yum install openssh-clients
+    yum install openssh-clients
     ```
 -   **ssh connection using with ip.**
     ```
-    # ssh username@remote_system_address
+    ssh username@remote_system_address
     ```
 -   **ssh connection using with port and ip.**
     ```
-    # ssh -p port_number username@remote_system_address
+    ssh -p port_number username@remote_system_address
     ```
 -   **ssh connation using with public key**
     ```
-    # ssh -i id_rsa user@remote_system_address
+    ssh -i id_rsa user@remote_system_address
     ```
 
 # SSH Server.
 
 -   **Install SSH Server.**
     ```
-    # yum install openssh-*
+    yum install openssh-*
     ```
 -   **Start SSH Service.**
     ```
-    # systemctl enable sshd.service
+    systemctl enable sshd.service
     ```
     ```
-    # systemctl start sshd.service
+    systemctl start sshd.service
     ```
 -   **SSH Port allow in firewall.**
     ```
-    # iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 22 -j ACCEPT
     ```
     ```
-    # iptables-save
+    iptables-save
     ```
     ```
-    # systemctl restart iptables.service
+    systemctl restart iptables.service
     ```
 -   **SSH Configure with specific port.**
 
     *Open main Configuration file.*
     ```
-    # vim /etc/ssh/sshd_config
+    vim /etc/ssh/sshd_config
     ```
     *Search **'# port22'** remove the **'#'** to uncomment the directive.*
     ```
@@ -55,23 +55,23 @@ SSH is often used to remotely access and manage servers, as it provides a secure
     ```
     *Allow Specific Port in firewall.*
     ```
-    # iptables -A INPUT -p tcp --dport Enter_your_Specific Port -j ACCEPT
+    iptables -A INPUT -p tcp --dport Enter_your_Specific Port -j ACCEPT
     ```
     ```
-    # iptables-save
+    iptables-save
     ```
     ```
-    # systemctl restart iptables.service
+    systemctl restart iptables.service
     ```
     *Restart the SSH server to apply the changes.*
     ```
-    # systemctl restart sshd.service
+    systemctl restart sshd.service
     ```
 -   **SSH Configure with specific IP.**
 
     *Open main Configuration file.*
     ```
-    # vim /etc/ssh/sshd_config
+    vim /etc/ssh/sshd_config
     ```
     *Search **'#ListenAddress 0.0.0.0'** remove the **'#'** to uncomment the directive.*
     ```
@@ -79,13 +79,13 @@ SSH is often used to remotely access and manage servers, as it provides a secure
     ```
     *Restart the SSH server to apply the changes.*
     ```
-    # systemctl restart sshd.service
+    systemctl restart sshd.service
     ```
 -   **Disable root login in SSH.**
 
     *Open main Configuration file.*
     ```
-    # vim /etc/ssh/sshd_config
+    vim /etc/ssh/sshd_config
     ```
     *Search **'# PermitRootLogin yes'** remove the **'#'** to uncomment the directive.*
     ```
@@ -93,7 +93,7 @@ SSH is often used to remotely access and manage servers, as it provides a secure
     ```
     *Restart the SSH server to apply the changes.*
     ```
-    # systemctl restart sshd.service
+    systemctl restart sshd.service
     ```
 -   **SSH Configure using with public key.**
     
@@ -101,7 +101,7 @@ SSH is often used to remotely access and manage servers, as it provides a secure
 
     *Open File.*
     ```
-    # vim /etc/ssh/sshd_config
+    vim /etc/ssh/sshd_config
     ```
 
     *1. Search :- ```PubkeyAuthentication no``` Replace with ```PubkeyAuthentication yes```*
@@ -124,5 +124,5 @@ SSH is often used to remotely access and manage servers, as it provides a secure
     ```
     *Restart the SSH server to apply the changes.*
     ```
-    # systemctl restart sshd.service
+    systemctl restart sshd.service
     ```
