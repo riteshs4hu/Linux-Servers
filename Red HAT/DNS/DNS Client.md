@@ -3,11 +3,11 @@
 **Install DNS Client Tool.**
 
 ```
-# yum install bind-utils
+yum install bind-utils
 ```
 Find Available Package.
 ```
-# rpm -ql bind-utils
+rpm -ql bind-utils
 ```
 
 # <font size=5>Commands</font>
@@ -15,93 +15,93 @@ Find Available Package.
 ### dig
 
 ```
-# dig IP/domain name
+dig IP/domain name
 ```
 ```
-# dig IP/Domain_name @localdomain
-```
-
-```
-# dig IP/Domain _Name Enter_Record_Type
+dig IP/Domain_name @localdomain
 ```
 
 ```
-# dig -4 Enter_IPv4
+dig IP/Domain _Name Enter_Record_Type
 ```
 
 ```
-# dig -6 Enter_IPv6
+dig -4 Enter_IPv4
 ```
 
 ```
-# dig IP/Domain_Name +sort
+dig -6 Enter_IPv6
 ```
 
 ```
-# dig 8.8.8.8 +short
+dig IP/Domain_Name +sort
 ```
 
 ```
-# dig example.com AAAA +noquestion
+dig 8.8.8.8 +short
 ```
 
 ```
-# dig example.com MX +short
+dig example.com AAAA +noquestion
 ```
 
 ```
-# dig -4 8.8.8.8 NS +noanswer
+dig example.com MX +short
 ```
 
 ```
-# dig -t AAAA example.com
+dig -4 8.8.8.8 NS +noanswer
 ```
 
 ```
-# dig -t A example.com +short
+dig -t AAAA example.com
 ```
 
 ```
-# dig example.com any
+dig -t A example.com +short
+```
+
+```
+dig example.com any
 ```
 
 ### host
 
 ```
-# host  IP/Domain_Name
+host  IP/Domain_Name
 ```
 
 ```
-# host -t Enter_Domain_Record IP/Domain_Name`
+host -t Enter_Domain_Record IP/Domain_Name`
 ```
 ```
-# hosr -t A example.com
-```
-
-```
-# host example.com
+hosr -t A example.com
 ```
 
 ```
-# host 8.8.8.8
+host example.com
 ```
 
 ```
-# host -a example.com
+host 8.8.8.8
 ```
 
 ```
-# host -4 8.8.8.8
+host -a example.com
+```
+
+```
+host -4 8.8.8.8
 ```
 
 ### nslookup
 
 ```
-# nslookup example.com
+nslookup example.com
 ````
 
 ```
-# nslookup -type=SOA example.com
+nslookup -type=SOA example.com
 ```
 ```
 nslookup example.com localdomain
