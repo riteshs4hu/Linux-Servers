@@ -8,15 +8,15 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
 
     *Install ftp client tool.*
     ```
-    # yum install ftp
+    yum install ftp
     ```
     *Connect to an FTP server.*
     ```
-    # ftp ftp_connation_ip
+    ftp ftp_connation_ip
     ```
 -	**FTP Server Tool.**
 	```
-	# yum install vsftpd
+	yum install vsftpd
     ```
 
 -   **Files.**
@@ -35,7 +35,7 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
     
     *Passive mode is a mode of operation in which the client initiates the data connection to the server rather than the server initiating the connection to the client.*
     ```
-    # vim /etc/vsftpd/vsftpd.conf
+    vim /etc/vsftpd/vsftpd.conf
     ```
         
         pasv_enable=YES
@@ -46,7 +46,7 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
     
     *Edit This File.*
 	```
-	# vim /etc/sysconfig/iptables
+	vim /etc/sysconfig/iptables
 	```
     ```
     -A INPUT -p tcp --dport 21 -j ACCEPT
@@ -58,10 +58,10 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
     ```
 -   **Start the vsftpd service and enable it to start automatically at boot time.**
     ```
-    # systemctl start vsftpd
+    systemctl start vsftpd
     ```
     ```
-	# systemctl enable vsftpd
+    systemctl enable vsftpd
     ```
 
     Default User :- anonymous,ftp
@@ -70,7 +70,7 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
 
     *Edit File*
     ```
-    # vim /etc/vsftpd/vsftpd.conf
+    vim /etc/vsftpd/vsftpd.conf
     ```
     Search:- **anonymous_enable=YES** Convert with **anonymous_enable=NO**
 
@@ -78,19 +78,19 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
 
     *Edit File*
     ```
-    # vim /etc/vsftpd/vsftpd.conf
+    vim /etc/vsftpd/vsftpd.conf
     ```
     Search:- **anonymous_enable=NO** Convert with **anonymous_enable=YES**
 
     *restart service*
     ```
-    # systemctl restart vsftpd.service
+    systemctl restart vsftpd.service
     ```
 -   **Unblock Regular user.**
 
     *Edit File*
     ```
-    # vim /etc/vsftpd/vsftpd.conf
+    vim /etc/vsftpd/vsftpd.conf
     ```
     1.Search:- **chroot_local_user=YES** Uncommant this line.
     
@@ -98,43 +98,43 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
  
     *restart service*
     ```
-    # systemctl restart vsftpd.service
+    systemctl restart vsftpd.service
     ```
 -   **Unblock Root User.**
 
     *Commant root user in this files.*
     ```
-    # vim /etc/vsftpd/user_list
+    vim /etc/vsftpd/user_list
     ```
     ```
-    # vim /etc/vsftpd/ftpusers
+    vim /etc/vsftpd/ftpusers
     ```
     *restart service*
     ```
-    # systemctl restart vsftpd.service
+    systemctl restart vsftpd.service
     ```
 -   **Block Root User.**
 
     *Uncommant root user in this files.*
     ```
-    # vim /etc/vsftpd/user_list
+    vim /etc/vsftpd/user_list
     ```
     ```
-    # vim /etc/vsftpd/ftpusers
+    vim /etc/vsftpd/ftpusers
     ```
 
     *restart service*
     ```
-    # systemctl restart vsftpd.service
+    systemctl restart vsftpd.service
     ```
 -   **Change Default Directory.**
 
     1 Create a folder for users.
     ```
-    # mkdir /folder_name
+    mkdir /folder_name
     ```
     ```
-    # vim /etc/vsftpd/vsftpd.conf
+    vim /etc/vsftpd/vsftpd.conf
     ```
     
     Add This line.
@@ -143,7 +143,7 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
 
     *restart service*
     ```
-    # systemctl restart vsftpd.service
+    systemctl restart vsftpd.service
     ```
 -   **Deny list.**
 
@@ -151,21 +151,21 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
 
     **Files.**
     ```
-    # vim /etc/vsftpd/user_list
+    vim /etc/vsftpd/user_list
     ```
     ```
-    # vim /etc/vsftpd/ftpusers
+    vim /etc/vsftpd/ftpusers
     ```
 
     *restart service*
     ```
-    # systemctl restart vsftpd.service
+    systemctl restart vsftpd.service
     ```
 -   **Allow list.**
 
     *Make Allow user file.*
     ```
-    # vim /etc/vsftpd/allow_users
+    vim /etc/vsftpd/allow_users
     ```
     Note:- Entry Allow User in this file.
 
@@ -173,7 +173,7 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
     
     1.Search:- **chroot_local_user=YES** commant this line.
     ```
-    # vim /etc/vsftpd/vsftpd.conf
+    vim /etc/vsftpd/vsftpd.conf
     ```
     2.Add This Line.
     ```
@@ -183,5 +183,5 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
     ```
     *restart service*
     ```
-    # systemctl restart vsftpd.service
+    systemctl restart vsftpd.service
     ```
