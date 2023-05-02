@@ -5,20 +5,20 @@
 ****Check Hostname.****
 
 ```
-# hostname
+hostname
 ```
 
 **Change Hostname And Domain Name.**
 
 Edit This File.
 ```
-# vim /etc/hostname #hostname.domain-name.top_level_domain_name
+vim /etc/hostname #hostname.domain-name.top_level_domain_name
 ```
 
 **Change DNS.**
 
 ```
-# vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
+vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
 ```
 
     Searhc DNS
@@ -29,13 +29,13 @@ Edit This File.
 **Install Cache Tools.**
 
 ```
-# yum install bind*
+yum install bind*
 ```
 
 **Edit Configure File.**
 
 ```
-# vim /etc/named.conf
+vim /etc/named.conf
 ```
     Listen-on port 53 { 127.0.0.1; Your-IP;};
 
@@ -44,21 +44,21 @@ Edit This File.
 **Start Cache Service.**
 
 ```
-# systemctl enable named.service
+systemctl enable named.service
 ```
 
 ```
-# systemctl restart named.service
+systemctl restart named.service
 ```
 
 **Enable DNS Port in Firewall**
 
 ```
-# vim /etc/sysconfig/iptables
+vim /etc/sysconfig/iptables
 ```
     -A INPUT -p UPD --dport 53 -j ACCEPT
 ```
-# systemctl restart iptables
+systemctl restart iptables
 ```
 
 # Primary DNS/Master DNS
@@ -77,7 +77,7 @@ Primary DNS (Domain Name System) is a server that translates human-readable doma
 
 **1. Edit File**
 ```
-# vim /etc/named.rfc1912.zones
+vim /etc/named.rfc1912.zones
 ```
 
 **2. Make Zone**
@@ -93,16 +93,16 @@ Primary DNS (Domain Name System) is a server that translates human-readable doma
 **3. Make A Zone File**
 
 ```
-# cp /var/named/named.localhost /var/named/zone_file_name
+cp /var/named/named.localhost /var/named/zone_file_name
 ```
 
 **4. Change file group**
 ```
-# chgrp named /var/named/zone_file_name
+chgrp named /var/named/zone_file_name
 ```
 **5. Edit zone File**
 ```
-# vim /var/named/zonefilename
+vim /var/named/zonefilename
 ```
 ![Zone File](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Red%20HAT/DNS/Images/ZoneFile.png?raw=true)
 
@@ -117,16 +117,16 @@ third make a record.
 **6.Start Service**
 
 ```
-# systemctl restart named
+systemctl restart named
 ```		
 
 **7. Check Mistacks.**
 ```		
-# named-checkconf
+named-checkconf
 ```
 
 ```
-# named-checkzone zonename /var/named/zone_file_name. 
+named-checkzone zonename /var/named/zone_file_name. 
 ```
 ### Reverse Zone Configuration.
 
@@ -134,7 +134,7 @@ third make a record.
 **1. Make A Reverse Zone**
 
 ```
-# vim /etc/named.rfc1912.zones
+vim /etc/named.rfc1912.zones
 ```
 ![Reverse Zone](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Red%20HAT/DNS/Images/Revers%20Zone.png?raw=true)
 
@@ -147,13 +147,13 @@ third make a record.
 **2. Make Zone File**
 
 ```
-# cp /var/named/named.localhost /var/named/zone_file_name.
+cp /var/named/named.localhost /var/named/zone_file_name.
 ```
 
 **3. Edit Zone File**
 
 ```
-# vim /var/named/zone_file_name
+vim /var/named/zone_file_name
 ```
 
 ![Reverse Zone File](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Red%20HAT/DNS/Images/Revers%20Zone%20File.png?raw=true)
@@ -167,13 +167,13 @@ third make a record.
 **4. Change File Group.**
 
 ```
-# chgrep named zone_file_name.
+chgrep named zone_file_name.
 ```
 
 **5. Start Service**
 
 ```
-# systemctl restart named
+systemctl restart named
 ```
 
 # Seconder/Slave DNS
@@ -196,7 +196,7 @@ fourth Enter master dns IP.
 **2. Start Service.**
 
 ```
-# systemctl restart named
+systemctl restart named
 ```		
 
 **3. Change Primery Dns Settings.**
@@ -215,15 +215,15 @@ fourth make A records.
 
 **4. Restart Service.**
 ```
-# systemctl restart named
+systemctl restart named
 ```
 
-# Forwarders DNS Server
+Forwarders DNS Server
 
 
 **Edit File**
 ```
-# vim /etc/named.conf
+vim /etc/named.conf
 ```	
 **search recursion And insert This Line**.
 
@@ -233,5 +233,5 @@ fourth make A records.
 **Check Forwarders query**
 
 ```
-# tcpdump -n -t udp port 53
+tcpdump -n -t udp port 53
 ```
