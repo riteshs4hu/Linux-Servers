@@ -6,7 +6,7 @@ Telnet is a protocol that allows a user to remotely access and manage a device, 
 -   **Client Tools Package.**
    
     ```
-    # yum install telnet
+    yum install telnet
     ```
 
 -   **Telnet connection with the IP address**
@@ -20,12 +20,12 @@ Telnet is a protocol that allows a user to remotely access and manage a device, 
 -   **Install Telnet Server Package.**
 
     ```
-    # yum install telnet-server xinetd
+    yum install telnet-server xinetd
     ```
 -   **Make telnet service file**
 
     ```
-    # vim /etc/xinetd.d/telnet
+    vim /etc/xinetd.d/telnet
     ```
         service  telnet
         {
@@ -41,33 +41,33 @@ Telnet is a protocol that allows a user to remotely access and manage a device, 
 -   **Port Allow in iptables.**
 
     ```
-    # iptables -A INPUT -p tcp --dport 23 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 23 -j ACCEPT
     ```
     ```
-    # iptables-save
+    iptables-save
     ```
     ```
-    # systemctl restart iptables.service 
+    systemctl restart iptables.service 
     ```
 -   **Start telnet service.**
 
     ```
-    # systemctl enable telnet.socket
+    systemctl enable telnet.socket
     ```
     ```
-    # systemctl restart telnet.socket
+    systemctl restart telnet.socket
     ```
     ```
-    # systemctl enable xinetd.service
+    systemctl enable xinetd.service
     ```
     ```
-    # systemctl restart xinetd.service
+    systemctl restart xinetd.service
     ```
 
 -   **Enable root User**
 
     ```
-    # vim /etc/securetty
+    vim /etc/securetty
     ```
     **Note:-** Go to end of the file and insert this lines. 
         
@@ -85,5 +85,5 @@ Telnet is a protocol that allows a user to remotely access and manage a device, 
     **Retart telnet service.**
 
     ```
-    # systemctl restart xinetd.service
+    systemctl restart xinetd.service
     ```
