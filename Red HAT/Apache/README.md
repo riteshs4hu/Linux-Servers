@@ -28,7 +28,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   Install Apache web server in Red Hat Linux.
 
     ``` 
-    # yum install httpd*
+    yum install httpd*
     ```
 -   Usefull Files .
     
@@ -39,12 +39,12 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   Owaner and Group change.
 
     ```
-    # chown -Rv apache:apache /var/www/html/*
+    chown -Rv apache:apache /var/www/html/*
     ```
 -   Port Allow in iptables.
 
     ```
-    # vim /etc/sysconfig/iptables
+    vim /etc/sysconfig/iptables
     ```
 	    
         -A INPUT -p tcp --dport 80 -j ACCEPT
@@ -55,15 +55,15 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 	
 -   Start iptables service.
     ```
-    # systemctl start iptables
+    systemctl start iptables
     ```
     *usage :- This Command Start iptables service.*
     ```
-    # systemctl restart iptables
+    systemctl restart iptables
     ```
     *usage :- This Command restart iptables service.*
     ```	
-    # systemctl enable iptables
+    systemctl enable iptables
     ```
     *usage :- This Command enable Booton iptables service.*
 
@@ -72,7 +72,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 - Edit This File
     ```
-    # vim /etc/httpd/conf/httpd.conf
+    vim /etc/httpd/conf/httpd.conf
     ```
 
 	Note Search :- search for Addtype text/html .shtml and insert this two line.
@@ -85,7 +85,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Edit File.
     ```
-    # vim /etc/httpd/conf/httpd.conf
+    vim /etc/httpd/conf/httpd.conf
     ```	
     Note:- Add these lines at the end of the file.
         
@@ -99,14 +99,14 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```
-    # systemctl restart httpd.service
+    systemctl restart httpd.service
     ```
 
 # Website Binde with Port.
 
 -   Edit File.
     ```
-    # vim /etc/httpd/conf/httpd.conf
+    vim /etc/httpd/conf/httpd.conf
     ```
     Note:- Add these lines at the end of the file.
 
@@ -122,7 +122,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```
-    # systemctl restart httpd.service
+    systemctl restart httpd.service
     ```
 
 # Website Binde with Domain Name.
@@ -131,7 +131,7 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Edit File.
     ```
-    # vim /etc/httpd/conf/httpd.conf
+    vim /etc/httpd/conf/httpd.conf
     ```	
     Note:- Add these lines at the end of the file.
 
@@ -149,18 +149,18 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```
-    # systemctl restart httpd.service
+    systemctl restart httpd.service
     ```
 
 # Website Binde with SSL.
 
 -   Install SSL
     ```
-    # yum install mod_ssl
+    yum install mod_ssl
     ```	
 -   Edit File.
     ```
-    # vim /etc/httpd/conf/httpd.conf
+    vim /etc/httpd/conf/httpd.conf
     ```
     Note:- Add these lines at the end of the file.
             
@@ -180,18 +180,18 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   Start service.
     ```		
-    # systemctl restart httpd.service
+    systemctl restart httpd.service
     ```
 # Website Call with Users home-directory.
 
 -   **Enable UserDir**
 
     ```
-    # vim /etc/httpd/conf.d/userdir.conf
+    vim /etc/httpd/conf.d/userdir.conf
     ```
 -   **Binde website**
     ```
-    # vim /etc/httpd/conf.d/user_name.conf
+    vim /etc/httpd/conf.d/user_name.conf
     ```
     ```
     <Virtualhost  Enter_Binde_IP>
@@ -202,10 +202,10 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
 -   **Grant execute permission to user home directory.**
     ```
-    # cd /home/
+    cd /home/
     ```
     ```
-    # chmod 711 user_name
+    chmod 711 user_name
     ```
 
 -   **Go To User**
@@ -222,23 +222,23 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 -   **Add the some yum repository to your system by running the following command.**
 
     ```
-    # yum install epel-release.noarch
+    yum install epel-release.noarch
     ```
     ```
-    # yum install remi-release-7.9-4.el7.remi.noarch
+    yum install remi-release-7.9-4.el7.remi.noarch
     ```
     ```
-    # yum install elrepo-release-7.0-6.el7.elrepo.noarch
+    yum install elrepo-release-7.0-6.el7.elrepo.noarch
     ```
 
 -   **Install PHP.**
 
     ```
-    # yum-config-manager --enable remi-php80 
+    yum-config-manager --enable remi-php80 
     ```
 
     ```
-    # yum install php php-common.x86_64 php-mcrypt.x86_64 php-cli.x86_64 php-opcache.x86_64 php-gd.x86_64 php-curl php-mysqlnd.x86_64 php-xml.x86_64 php-mbstring.x86_64 mysql-devel php-pear php-mbstring php-pecl-http php-pecl-curl php-session
+    yum install php php-common.x86_64 php-mcrypt.x86_64 php-cli.x86_64 php-opcache.x86_64 php-gd.x86_64 php-curl php-mysqlnd.x86_64 php-xml.x86_64 php-mbstring.x86_64 mysql-devel php-pear php-mbstring php-pecl-http php-pecl-curl php-session
     ```
 
 -  **Install MySQL.**
@@ -252,51 +252,51 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     ```
     ***usage*** :- Install phpMyAdmin Package.
     ```
-	# tar -xvf phpMyAdmin-latest-all-languages.tar.gz
+	tar -xvf phpMyAdmin-latest-all-languages.tar.gz
 	```
     ***usage*** :- Unzip phpMyAdmin Package.
     ```	
-	# cp -rv phpMyAdmin-5.2.0-all-languages /var/www/html/phpMyAdmin
-	```
+    cp -rv phpMyAdmin-5.2.0-all-languages /var/www/html/phpMyAdmin
+    ```
 
     **Bind phpMyAdmin any type in your web server.**	
     ```
-	# vim /etc/httpd/conf/httpd.conf
+    vim /etc/httpd/conf/httpd.conf
     ```
     ```
 	<Virtualhost Enter_phpMyAdmin_Bind_IP>
-   		Documentroot /var/www/html/phpMyAdmin/
+   	Documentroot /var/www/html/phpMyAdmin/
     	Directoryindex index.php
 	</virtualhost>
     ```
 
     **Change folder Ownership.**
     ```
-    # chown -Rv apache:apache /var/www/html/phpMyAdmin
+    chown -Rv apache:apache /var/www/html/phpMyAdmin
     ```
 
     **Restart Service**
     ```
-	# systemctl restart httpd
+    systemctl restart httpd
     ```
 
 -   **Configure Wordpress.**
 
     Install
     ```
-    # wget https://wordpress.org/latest.tar.gz
-	```
+    wget https://wordpress.org/latest.tar.gz
+    ```
      ***usage*** :- Install wordpress Package.
     ```
-	# tar -xvf latest.tar.gz
+    tar -xvf latest.tar.gz
     ```
     ***usage*** :- Unzip wordpress Package.
     ```	
-	# cp -v wordpress/ /var/www/html/
-	```
+    cp -v wordpress/ /var/www/html/
+    ```
     **Bind wordpress any type in your web server.**
     ```
-    # vim /etc/httpd/conf/httpd.conf
+    vim /etc/httpd/conf/httpd.conf
     ```
     ```
     <Virtualhost Enter_phpMyAdmin_Bind_IP>
@@ -307,12 +307,12 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
     **Change folder Ownership.**
     ```
-    # chown -Rv apache:apache /var/www/html/wordpress/
+    chown -Rv apache:apache /var/www/html/wordpress/
     ```
 
     **Disable selinux Permission**
     ```
-    # vim /etc/sysconfig/selinux
+    vim /etc/sysconfig/selinux
     ```
     ```
     Search 
@@ -326,5 +326,5 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
     **Restart Service**
     ```
-	# systemctl restart httpd
+    systemctl restart httpd
     ```
