@@ -29,19 +29,19 @@ Acknowledge: The DHCP server then acknowledges the request and assigns the IP ad
 -   **Install DHCP.**
 
     ```
-    # apt instal isc-dhcp-server
+    apt instal isc-dhcp-server
     ```
 
 -   **Allow Your Enterface name.**
     ```
-    # vim /etc/default/isc-dhcp-server
+    vim /etc/default/isc-dhcp-server
     ```
 
 -   **Allow DHCP port on firewall.**
 
     ```
-    # iptables -A INPUT -p udp --dport 67 -j ACCEPT
-    # iptables-save > /etc/iptables/rules.v4
+    iptables -A INPUT -p udp --dport 67 -j ACCEPT
+    iptables-save > /etc/iptables/rules.v4
     ```
     ```
     systemctl restart iptables.service
@@ -49,16 +49,16 @@ Acknowledge: The DHCP server then acknowledges the request and assigns the IP ad
 
 -   **Start DHCP Service.**
     ```
-    # systemctl enable isc-dhcp-server.service
+    systemctl enable isc-dhcp-server.service
     ```
     ```
-    # systemctl start isc-dhcp-server.service
+    systemctl start isc-dhcp-server.service
     ```
 
 -   **DHCP Configure**.
 
     ```
-    # vim /etc/dhcp/dhcp.config
+    vim /etc/dhcp/dhcp.config
     ```
 
     Distribute IP address.
