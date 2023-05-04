@@ -2,7 +2,7 @@
 
 -   **Install Client Tool.**
     ```
-    # apt install smbclient
+    apt install smbclient
     ```
 -   **Client Tools.**
 
@@ -11,10 +11,10 @@
     The smbclient command is a command-line utility that allows you to interact with SMB servers. You can use it to list the available shares on a server, get files from a server, and put files onto a server.
 
     ```
-    # smbcliet -L //IP -U enter_user_name
+    smbcliet -L //IP -U enter_user_name
     ```
     ```
-    # smbclient -L //IP -U "" -N										
+    smbclient -L //IP -U "" -N										
     ```
     ```
 	smbclient //IP/data access_folder_name -U enter_user_name
@@ -28,7 +28,7 @@
     The smbget command is a utility for retrieving files from an SMB server. You can use it to download a file from a server by specifying the server URL and the path to the file you want to download.
 	
     ```
-    # smbget -U enter_user_name smb://IP/data_folder_name/file_access_name
+    smbget -U enter_user_name smb://IP/data_folder_name/file_access_name
 	```
 	**3. smbtar**					
 
