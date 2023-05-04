@@ -6,7 +6,7 @@ Telnet is a protocol that allows a user to remotely access and manage a device, 
 -   **Client Tools Package.**
    
     ```
-    # yum install telnet
+    apt install telnet
     ```
 
 -   **Telnet connection with the IP address**
@@ -20,26 +20,26 @@ Telnet is a protocol that allows a user to remotely access and manage a device, 
 -   **Install Telnet Server Package.**
 
     ```
-    # apt install telnetd
+    apt install telnetd
     ```
 
 -   **Port Allow in iptables.**
 
     ```
-    # iptables -A INPUT -p tcp --dport 23 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 23 -j ACCEPT
     ```
     ```
-    # iptables-save
+    iptables-save
     ```
     ```
-    # systemctl restart iptables
+    systemctl restart iptables
     ```
 
 -   **Start telnet Service.**
 
      ```
-    # systemctl start inetd
+    systemctl start inetd
     ```
      ```
-    # systemctl enable inetd
+    systemctl enable inetd
     ```
