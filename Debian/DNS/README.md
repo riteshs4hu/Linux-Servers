@@ -6,20 +6,20 @@
 -   ****Check Hostname.****
 
     ```
-    # hostname
+    hostname
     ```
 
 -   **Change Hostname And Domain Name.**
 
     Edit This File.
     ```
-    # vim /etc/hostname #hostname.domain-name.top_level_domain_name
+    vim /etc/hostname #hostname.domain-name.top_level_domain_name
     ```
 
 -   **Change DNS.**
 
     ```
-    # vim /etc/network/interfaces
+    vim /etc/network/interfaces
     ```
 
         Searhc DNS
@@ -30,13 +30,13 @@
 -   **Install Cache Tools.**
 
     ```
-    # apt install bind9
+    apt install bind9
     ```
 
 -   **Edit Configure File.**
 
     ```
-    # vim /etc/bind/named.conf.options
+    vim /etc/bind/named.conf.options
     ```
 
         Listen-on port 53 { 127.0.0.1; Your-IP;};
@@ -47,26 +47,26 @@
 -   **Start Cache Service.**
 
     ```
-    # systemctl enable bind9.service
+    systemctl enable bind9.service
     ```
 
     ```
-    # systemctl restart bind9.service
+    systemctl restart bind9.service
     ```
 
 -   **Enable DNS Port in Firewall.**
 
     ```
-    # iptables -A INPUT -p tcp --dport 53 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 53 -j ACCEPT
     ```
     ```
-    # iptables -A INPUT -p udp --dport 53 -j ACCEPT
+    iptables -A INPUT -p udp --dport 53 -j ACCEPT
     ```
     ```
-    # iptables-save > /etc/iptables/rules.v4
+    iptables-save > /etc/iptables/rules.v4
     ```
     ```
-    # systemctl restart iptables
+    systemctl restart iptables
     ```
 
 # Primary DNS/Master DNS
@@ -76,7 +76,7 @@ Primary DNS (Domain Name System) is a server that translates human-readable doma
 
 **1. Edit File**
 ```
-# vim /etc/bind/named.conf.default-zones
+vim /etc/bind/named.conf.default-zones
 ```
 
 **2. Make Zone**
@@ -92,12 +92,12 @@ Primary DNS (Domain Name System) is a server that translates human-readable doma
 **3. Make A Zone File**
 
 ```
-# cp -v /etc/bind/db.local /etc/bind/zone_file_name
+cp -v /etc/bind/db.local /etc/bind/zone_file_name
 ```
 
 **5. Edit zone File**
 ```
-# vim /etc/bind/zone_file_name
+vim /etc/bind/zone_file_name
 ```
 ![Zone File](https://github.com/Mr-Secure-Code/Linux_Server/blob/main/Debian/DNS/images/ZoneFile.png?raw=true)
 
@@ -112,16 +112,16 @@ third make a record.
 **6.Start Service**
 
 ```
-# systemctl restart bind9
+systemctl restart bind9
 ```		
 
 **7. Check Mistacks.**
 ```		
-# named-checkconf
+named-checkconf
 ```
 
 ```
-# named-checkzone zonename /etc/bind/zone_file_name. 
+named-checkzone zonename /etc/bind/zone_file_name. 
 ```
 
 # Forwarders DNS Server
@@ -129,7 +129,7 @@ third make a record.
 
 -   **Edit File**
     ```
-    # vim /etc/bind/named.conf.options
+    vim /etc/bind/named.conf.options
     ```	
 
 -   **search // forwarders And Uncommant fowarders**.
@@ -139,5 +139,5 @@ third make a record.
 -   **Check Forwarders query**
 
     ```
-    # tcpdump -n -t udp port 53
+    tcpdump -n -t udp port 53
     ```
