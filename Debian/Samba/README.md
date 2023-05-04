@@ -4,45 +4,45 @@ SMB (Server Message Block) is a network protocol used by Windows-based computers
 
 -   **Install SMB Server**
 	```
-	# apt install samba*
+	apt install samba*
 	```
     
 	Configuration file
     ```
-	# vim /etc/samba/smb.conf
+	vim /etc/samba/smb.conf
 	```	
 -   **Port Allow in Iptables**
     ```
-	# iptables -A INPUT -p tcp --dport 445 -j ACCEPT
+	iptables -A INPUT -p tcp --dport 445 -j ACCEPT
 	```	
 	```
-	# systemctl restart iptables
+	systemctl restart iptables
 	```	
 -   **Start SMB service**
 	```
-	# systemctl restart smbd.service
+	systemctl restart smbd.service
 	```
     ```
-	# systemctl enable smbd.service
+	systemctl enable smbd.service
 	```
 -   **Add User in SMB**
 	```
-	# smbpasswd -a Add_User_name
+	smbpasswd -a Add_User_name
     ```
 
 -	**Share Directory**
 
 	*1. Make a share directory*
 	```
-	# mkdir /share_directory_name
+	mkdir /share_directory_name
 	```
 	*2. Change Directory Permission*
 	```
-	# chmod 777 /share_directory_name
+	chmod 777 /share_directory_name
 	```
 	*3. Edit configuration file*
 	```
-	# vim /etc/samba/smb.conf
+	vim /etc/samba/smb.conf
 	```
 	Go to end of this file and add this lines
 		
@@ -56,21 +56,21 @@ SMB (Server Message Block) is a network protocol used by Windows-based computers
 	*4. Start samba service.*
 
 	```
-	# systemctl restart smbd.service
+	systemctl restart smbd.service
 	```
 -	**Share Directory for valid users**
 
 	*1. Make a share directory*
 	```
-	# mkdir /share_directory_name
+	mkdir /share_directory_name
 	```
 	*2. Change Directory Permission*
 	```
-	# chmod 777 /share_directory_name
+	chmod 777 /share_directory_name
 	```
 	*3. Edit configuration file*
 	```
-	# vim /etc/samba/smb.conf
+	vim /etc/samba/smb.conf
 	```
 	Go to end of this file and add this lines
 		
@@ -84,21 +84,21 @@ SMB (Server Message Block) is a network protocol used by Windows-based computers
 	*4. Start samba service.*
 
 	```
-	# systemctl restart smbd.service
+	systemctl restart smbd.service
 	```
 -	**Share Directory for anonymous users**
 
 	*1. Make a anonymous share directory*
 	```
-	# mkdir /anonymous_share_directory_name
+	mkdir /anonymous_share_directory_name
 	```
 	*2. Change Directory Permission*
 	```
-	# chmod 777 /anonymous_share_directory_name
+	chmod 777 /anonymous_share_directory_name
 	```
 	*3. Edit configuration file*
 	```
-	# vim /etc/samba/smb.conf
+	vim /etc/samba/smb.conf
 	```
 	Go to end of this file and add this lines
 		
@@ -110,5 +110,5 @@ SMB (Server Message Block) is a network protocol used by Windows-based computers
 
 	*4. Start samba service.*
 	```
-	# systemctl restart smbd.service
+	systemctl restart smbd.service
 	```
