@@ -14,13 +14,13 @@ DORA stands for Discovery, Offer, Request, and Acknowledge. It is the process th
 
 Here is a brief summary of the DORA process:
 
-Discovery: When a device connects to a network, it broadcasts a message on the network asking if there are any DHCP servers available.
+**Discovery:** When a device connects to a network, it broadcasts a message on the network asking if there are any DHCP servers available.
 
-Offer: If there is a DHCP server on the network, it responds to the device with an offer of an IP address that the device can use.
+**Offer:** If there is a DHCP server on the network, it responds to the device with an offer of an IP address that the device can use.
 
-Request: The device then sends a request to the DHCP server, asking to be assigned the IP address that was offered.
+**Request:** The device then sends a request to the DHCP server, asking to be assigned the IP address that was offered.
 
-Acknowledge: The DHCP server then acknowledges the request and assigns the IP address to the device. The device can now use the assigned IP address to communicate with other devices on the network.
+**Acknowledge:** The DHCP server then acknowledges the request and assigns the IP address to the device. The device can now use the assigned IP address to communicate with other devices on the network.
 
 </font></span>
 
@@ -36,17 +36,7 @@ Acknowledge: The DHCP server then acknowledges the request and assigns the IP ad
     ```
     vim /etc/default/isc-dhcp-server
     ```
-
--   **Allow DHCP port on firewall.**
-
-    ```
-    iptables -A INPUT -p udp --dport 67 -j ACCEPT
-    iptables-save > /etc/iptables/rules.v4
-    ```
-    ```
-    systemctl restart iptables.service
-    ```
-
+    
 -   **Start DHCP Service.**
     ```
     systemctl enable isc-dhcp-server.service
