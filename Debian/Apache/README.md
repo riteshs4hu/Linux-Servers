@@ -39,30 +39,6 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     ```
     chown www-data:www-data /var/www/html/*
     ```
--   Port Allow in iptables.
-    ```
-    iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-    ```
-    ```
-    iptables -A INPUT -p tcp --dport 443 -j ACCEPT
-    ```
-    ```
-    iptables-save 
-    ```
-
--   Start iptables service.
-    ```
-    systemctl start iptables
-    ```
-    *usage :- This Command Start iptables service*
-    ```
-    systemctl restart iptables
-    ```
-    *usage :- This Command restart iptables service.*
-    ```	
-    systemctl enable iptables
-    ```
-    *usage :- This Command enable Booton iptables service.*
 
 # Website Binde with IP.
 
