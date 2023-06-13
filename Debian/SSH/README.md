@@ -32,16 +32,7 @@ SSH is often used to remotely access and manage servers, as it provides a secure
     ```
     systemctl start ssh.service
     ```
--   **SSH Port allow in firewall.**
-    ```
-    iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-    ```
-    ```
-    iptables-save
-    ```
-    ```
-    systemctl restart iptables.service
-    ```
+    
 -   **SSH Configure with specific port.**
 
     *Open main Configuration file.*
@@ -51,16 +42,6 @@ SSH is often used to remotely access and manage servers, as it provides a secure
     *Search **'# port22'** remove the **'#'** to uncomment the directive.*
     ```
     PORT Enter_Specific_port
-    ```
-    *Allow Specific Port in firewall.*
-    ```
-    iptables -A INPUT -p tcp --dport Enter_your_Specific Port -j ACCEPT
-    ```
-    ```
-    iptables-save
-    ```
-    ```
-    systemctl restart iptables.service
     ```
     *Restart the SSH server to apply the changes.*
     ```
