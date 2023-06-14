@@ -42,25 +42,6 @@ File Transfer Protocol (FTP) is a standard network protocol used to transfer fil
         pasv_min_port=55000
         pasv_max_port=55999
 
--   **Allow Port In iptables**
-    
-    *Edit This File.*
-	```
-	vim /etc/sysconfig/iptables
-	```
-    ```
-    iptables -A INPUT -p tcp --dport 21 -j ACCEPT
-	```
-    ```
-    iptables -A INPUT -p tcp --dport 55000:55999 -j ACCEPT
-    ```
-    ```
-    iptables-save
-    ```
-    *Start iptable service.*
-    ```
-    systemctl restart iptables.service
-    ```
 -   **Start the vsftpd service and enable it to start automatically at boot time.**
     ```
     systemctl start vsftpd
