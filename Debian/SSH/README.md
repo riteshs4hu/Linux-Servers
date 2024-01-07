@@ -88,6 +88,9 @@ SSH is often used to remotely access and manage servers, as it provides a secure
 
     **Go to the user you want to access remotely and run this command.**
     ```
+    ssh-keygen -f path/to/new_ssh_key_filename
+    ```
+    ```
     ssh-keygen
     ```
             Enter folder name in which to save the key (/home/user/.ssh/id_rsa):
