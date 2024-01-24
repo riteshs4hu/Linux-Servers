@@ -208,9 +208,9 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
 
     allow_url_fopen: Controls whether PHP scripts are allowed to access remote files using certain functions.
     ```
--  **MySQL Configure.**
+-  **[MySQL Configure.](https://downloads.mysql.com/docs/mysql-apt-repo-quick-guide-en.pdf)**
 
-    Install MySQL Repo.
+    Install MySQL Repo [list.](https://dev.mysql.com/downloads/repo/apt/)
     ```
     wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
     ```
