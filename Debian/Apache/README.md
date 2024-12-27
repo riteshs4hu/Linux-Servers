@@ -210,6 +210,8 @@ Apache is known for its flexibility and reliability, and it is used to host a wi
     ```
 -  **[MySQL Configure.](https://downloads.mysql.com/docs/mysql-apt-repo-quick-guide-en.pdf)**
 
+    [MySQL Old Version Key Error](https://forums.mysql.com/read.php?11,723158,723158)
+
     Install MySQL Repo [list.](https://dev.mysql.com/downloads/repo/apt/)
     ```
     wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
